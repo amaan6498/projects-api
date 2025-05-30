@@ -23,9 +23,7 @@ const db = new pg.Client({
   database: process.env.DATABASE_NAME,
   password: process.env.DATABASE_PASS,
   port: process.env.DATABASE_PORT,
-  ssl: {
-    rejectUnauthorized: false, // This allows for SSL without certificate validation (default on Render)
-  },
+  ssl: true,
 });
 
 async function connectToDb() {
