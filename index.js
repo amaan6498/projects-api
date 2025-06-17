@@ -5,13 +5,12 @@ import bcrypt from "bcrypt";
 import { v4 as uuidv4 } from "uuid";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 const port = 5000;
 const saltRounds = 10;
-const JWT_SECRET =
-  process.env.JWT_SECRET ||
-  "sKj9eFv6HrM3#Lq2vP@wTuKz8WxJfTgXzLm4cBzFv1Q!xShD5V2Tb7z*9K7UoYn";
+const JWT_SECRET = process.env.JWT_SECRET;
 
 app.use(cors());
 app.use(express.json());
